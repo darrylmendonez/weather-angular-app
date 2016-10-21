@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "angular-weather-app",
+    "angular-weather-app-staging": "angular-weather-app"
+  }
+}

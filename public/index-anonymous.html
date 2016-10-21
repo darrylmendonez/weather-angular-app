@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="weatherApp">
+    <head>
+        <title>AngularJS Weather Forecast SPA</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em !important;
+            }
+        </style>
+
+        <!-- CDNs -->
+        <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+        <!-- Custom scripts -->
+        <script src="js/app.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/directives.js"></script>
+        <!-- <base href="/" /> -->
+    </head>
+    <body>
+
+        <header>
+    			<nav class="navbar navbar-default">
+    			<div class="container">
+    				<div class="navbar-header">
+    					<a class="navbar-brand" href="/">AngularJS Weather</a>
+    				</div>
+
+    				<ul class="nav navbar-nav navbar-right">
+    					<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+              <li><a href="/weather"><i class="fa fa-home"></i>Weather</a></li>
+    				</ul>
+    			</div>
+    			</nav>
+    		</header>
+
+        <div class="container">
+          <div ng-view></div>
+          <div id='firebase-stuff' ng-controller="firebaseController as fbCtrl">
+
+            <h1>Anonymous Login</h1>
+            <p>
+              I know you're there, I just don't know who you are.
+            </p>
+            <a id="btnLogin" class="btn btn-primary" href='#'>Log In Anonymously</a>
+            <a id="btnLogout" class="btn btn-default hide" href='#'>Log Out</a>
+
+          </div>
+		    </div>
+
+
+        <script src="js/anonymous-firebase.js"></script>
+    </body>
+</html>
